@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+  <div class="logo">
+    <img src="{% static 'img/logo1.svg' %}" alt="Logo">
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="form-container">
+        <h1 class="text-center">Leave a Review</h1>
+        <form method="post">
+          {% csrf_token %}
+          
+          <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">Name</label>
+            {{ form.name }}
+          </div>
+          
+          <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{ form.email }}
+          </div>
+
+          <div class="form-group">
+            <label for="{{ form.review_text.id_for_label }}">Review</label>
+            {{ form.review_text }}
+          </div>
+          
+          <div class="form-group">
+            <label for="{{ form.rating.id_for_label }}">Rating</label>
+            {{ form.rating }}
+          </div>
+        
+          <div>
+          <button type="submit" class="btn btn-primary center-btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="social-icons">
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    
+  </div>
+</div>
+{% endblock %}
+
+
