@@ -1,1 +1,1 @@
-web: gunicorn mb_project.wsgi --log-file -
+web: gunicorn qr_code_review.wsgi
